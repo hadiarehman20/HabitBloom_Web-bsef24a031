@@ -1,0 +1,478 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabitBloom | Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="hb-dashboard">
+
+    <div class="hb-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="hb-sidebar">
+            <a href="index.html" class="hb-logo">
+                <span>❀</span> HabitBloom
+            </a>
+
+            <p class="hb-menu-label">MENU</p>
+
+            <nav class="hb-navigation">
+                <a href="#" class="active"><span>⌂</span> Dashboard</a>
+                <a href="#habits"><span>✿</span> My Habits</a>
+                <a href="#progress"><span>▥</span> Progress</a>
+                <a href="#calendar"><span>▦</span> Calendar</a>
+                <a href="#wellness"><span>♡</span> Wellness</a>
+            </nav>
+
+            <div class="hb-sidebar-bottom">
+                <div class="hb-sidebar-note">
+                    <span>🌷</span>
+                    <p>Bloom at your own pace. Every little effort counts.</p>
+                </div>
+                <a href="index.html" class="hb-logout">↪ &nbsp; Logout</a>
+            </div>
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="hb-main">
+
+            <!-- TOP BAR -->
+            <header class="hb-topbar">
+                <div>
+                    <p class="hb-date-label">YOUR PERSONAL SPACE</p>
+                    <h2>Dashboard</h2>
+                </div>
+
+                <div class="hb-profile">
+                    <div class="hb-profile-flower">✿</div>
+                    <div>
+                        <strong>Bloom User</strong>
+                        <small>HabitBloom Member</small>
+                    </div>
+                </div>
+            </header>
+
+
+            <!-- WELCOME SECTION -->
+            <section class="hb-welcome">
+                <div>
+                    <p class="hb-eyebrow">A FRESH START, A NEW DAY</p>
+                    <h1>Good Morning, Bloom! <span>🌷</span></h1>
+                    <p>Small steps today, beautiful changes tomorrow.</p>
+                </div>
+
+                <div class="hb-welcome-decoration">
+                    <span>✿</span>
+                    <p>GROW THROUGH<br>WHAT YOU GO THROUGH</p>
+                </div>
+            </section>
+
+
+            <!-- QUOTE -->
+            <section class="hb-quote">
+                <span>“</span>
+                <p>Trust the timing of your bloom. Keep growing, one habit at a time.</p>
+                <span>❀</span>
+            </section>
+
+
+            <!-- OVERVIEW CARDS -->
+            <section class="hb-overview">
+                <div class="hb-overview-card">
+                    <div class="hb-overview-icon sage-icon">🌱</div>
+                    <div>
+                        <small>TOTAL HABITS</small>
+                        <h3>04</h3>
+                        <p>Your daily routines</p>
+                    </div>
+                </div>
+
+                <div class="hb-overview-card">
+                    <div class="hb-overview-icon pink-icon">🌸</div>
+                    <div>
+                        <small>COMPLETED TODAY</small>
+                        <h3 id="completedNumber">02</h3>
+                        <p id="completedMessage">Keep going!</p>
+                    </div>
+                </div>
+
+                <div class="hb-overview-card">
+                    <div class="hb-overview-icon maroon-icon">🔥</div>
+                    <div>
+                        <small>CURRENT STREAK</small>
+                        <h3>05</h3>
+                        <p>Days in a row</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- MAIN DASHBOARD GRID -->
+            <section class="hb-main-grid">
+
+                <!-- DAILY BALANCE -->
+                <div class="hb-panel hb-balance">
+                    <div class="hb-panel-heading">
+                        <div>
+                            <h3>Daily Balance</h3>
+                            <p>Your overall wellness</p>
+                        </div>
+                        <span class="hb-tag">Today</span>
+                    </div>
+
+                    <div class="hb-balance-circle">
+                        <div class="hb-balance-inner">
+                            <span>75%</span>
+                            <small>IN BALANCE</small>
+                        </div>
+                    </div>
+
+                    <div class="hb-balance-legend">
+                        <span><i class="legend-mind"></i> Mind 40%</span>
+                        <span><i class="legend-body"></i> Body 30%</span>
+                        <span><i class="legend-energy"></i> Energy 30%</span>
+                    </div>
+                </div>
+
+
+                <!-- TODAY'S GOALS -->
+                <div class="hb-panel hb-goals" id="habits">
+                    <div class="hb-panel-heading">
+                        <div>
+                            <h3>Today's Goals</h3>
+                            <p>Make today count</p>
+                        </div>
+                        <span class="hb-flower-icon">✿</span>
+                    </div>
+
+                    <div class="hb-habit-progress">
+                        <div class="hb-habit-progress-track">
+                            <div id="habitProgressBar"></div>
+                        </div>
+                        <small id="habitProgressText">2 of 4 completed</small>
+                    </div>
+
+                    <div class="hb-goal-list">
+                        <label class="hb-goal-item">
+                            <input type="checkbox" class="hb-goal-check" checked>
+                            <span class="hb-custom-check"></span>
+                            <span>10 min meditation</span>
+                        </label>
+
+                        <label class="hb-goal-item">
+                            <input type="checkbox" class="hb-goal-check" checked>
+                            <span class="hb-custom-check"></span>
+                            <span>Drink 8 glasses of water</span>
+                        </label>
+
+                        <label class="hb-goal-item">
+                            <input type="checkbox" class="hb-goal-check">
+                            <span class="hb-custom-check"></span>
+                            <span>Read for 20 minutes</span>
+                        </label>
+
+                        <label class="hb-goal-item">
+                            <input type="checkbox" class="hb-goal-check">
+                            <span class="hb-custom-check"></span>
+                            <span>Sleep before 11 PM</span>
+                        </label>
+                    </div>
+
+                    <p class="hb-goal-footer">Every completed habit is a little victory! ♡</p>
+                </div>
+
+
+                <!-- CALENDAR -->
+                <div class="hb-panel hb-calendar" id="calendar">
+                    <div class="hb-panel-heading">
+                        <div>
+                            <h3>Calendar</h3>
+                            <p>Your monthly overview</p>
+                        </div>
+                        <span>▦</span>
+                    </div>
+
+                    <div class="hb-calendar-month">
+                        <button type="button" id="prevMonth">‹</button>
+                        <strong id="calendarMonth">November 2026</strong>
+                        <button type="button" id="nextMonth">›</button>
+                    </div>
+
+                    <div class="hb-calendar-grid" id="calendarGrid">
+                        <span>Su</span><span>Mo</span><span>Tu</span>
+                        <span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                    </div>
+
+                    <p class="hb-calendar-note">✿ A new day is a new opportunity.</p>
+                </div>
+
+            </section>
+
+
+            <!-- WELLNESS CARDS -->
+            <section class="hb-wellness-section" id="wellness">
+                <div class="hb-section-title">
+                    <div>
+                        <h2>Your Wellness Corner</h2>
+                        <p>Take care of yourself, inside and out.</p>
+                    </div>
+                    <span>♡</span>
+                </div>
+
+                <div class="hb-wellness-grid">
+
+                    <!-- ACTIVITY -->
+                    <div class="hb-panel hb-wellness-card">
+                        <div class="hb-wellness-heading">
+                            <span>👟</span>
+                            <small>DAILY ACTIVITY</small>
+                        </div>
+                        <h3>5,240 <small>steps</small></h3>
+                        <div class="hb-activity-track">
+                            <span></span>
+                        </div>
+                        <p>You're making progress. Keep moving!</p>
+                    </div>
+
+                    <!-- WATER -->
+                    <div class="hb-panel hb-wellness-card">
+                        <div class="hb-wellness-heading">
+                            <span>💧</span>
+                            <small>WATER INTAKE</small>
+                        </div>
+                        <h3 id="waterCount">5 / 8 <small>glasses</small></h3>
+                        <div class="hb-water-controls">
+                            <button type="button" id="waterMinus">−</button>
+                            <div class="hb-water-track">
+                                <span id="waterProgress"></span>
+                            </div>
+                            <button type="button" id="waterPlus">+</button>
+                        </div>
+                        <p id="waterMessage">Stay hydrated throughout the day.</p>
+                    </div>
+
+                    <!-- MEDITATION -->
+                    <div class="hb-panel hb-wellness-card hb-meditation-card">
+                        <div class="hb-wellness-heading">
+                            <span>🧘</span>
+                            <small>MINDFUL MOMENT</small>
+                        </div>
+                        <h3>Find your calm.</h3>
+                        <p>Take a little time to breathe and reset your mind.</p>
+                        <span class="hb-meditation-flower">✿</span>
+                    </div>
+
+                    <!-- SLEEP -->
+                    <div class="hb-panel hb-wellness-card">
+                        <div class="hb-wellness-heading">
+                            <span>🌙</span>
+                            <small>SLEEP QUALITY</small>
+                        </div>
+                        <h3>7h 20m <small>rest</small></h3>
+                        <div class="hb-sleep-track">
+                            <span></span>
+                        </div>
+                        <p>A good night's rest helps you bloom.</p>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- WEEKLY PROGRESS -->
+            <section class="hb-panel hb-weekly" id="progress">
+                <div class="hb-section-title">
+                    <div>
+                        <h2>Weekly Progress</h2>
+                        <p>Celebrate how far you've come.</p>
+                    </div>
+                    <span class="hb-tag">This Week</span>
+                </div>
+
+                <div class="hb-chart">
+                    <div class="hb-chart-column">
+                        <div class="hb-chart-bar" style="height:65%"></div>
+                        <small>Mon</small>
+                    </div>
+                    <div class="hb-chart-column">
+                        <div class="hb-chart-bar" style="height:45%"></div>
+                        <small>Tue</small>
+                    </div>
+                    <div class="hb-chart-column">
+                        <div class="hb-chart-bar" style="height:85%"></div>
+                        <small>Wed</small>
+                    </div>
+                    <div class="hb-chart-column">
+                        <div class="hb-chart-bar" style="height:70%"></div>
+                        <small>Thu</small>
+                    </div>
+                    <div class="hb-chart-column">
+                        <div class="hb-chart-bar" style="height:55%"></div>
+                        <small>Fri</small>
+                    </div>
+                    <div class="hb-chart-column">
+                        <div class="hb-chart-bar" style="height:95%"></div>
+                        <small>Sat</small>
+                    </div>
+                    <div class="hb-chart-column">
+                        <div class="hb-chart-bar" style="height:35%"></div>
+                        <small>Sun</small>
+                    </div>
+                </div>
+            </section>
+
+
+            <footer class="hb-footer">
+                ❀ HabitBloom — Small steps. Beautiful growth.
+            </footer>
+
+        </main>
+    </div>
+
+
+    <script>
+        // UPDATE HABIT COMPLETION
+        const goalCheckboxes = document.querySelectorAll(".hb-goal-check");
+        const completedNumber = document.getElementById("completedNumber");
+        const completedMessage = document.getElementById("completedMessage");
+        const progressBar = document.getElementById("habitProgressBar");
+        const progressText = document.getElementById("habitProgressText");
+
+        function updateHabits() {
+            const total = goalCheckboxes.length;
+            const completed = document.querySelectorAll(".hb-goal-check:checked").length;
+            const percentage = (completed / total) * 100;
+
+            completedNumber.textContent = String(completed).padStart(2, "0");
+            progressBar.style.width = percentage + "%";
+            progressText.textContent = completed + " of " + total + " completed";
+
+            if (completed === total) {
+                completedMessage.textContent = "All goals achieved!";
+            } else {
+                completedMessage.textContent = "Keep going!";
+            }
+        }
+
+        goalCheckboxes.forEach(function (checkbox) {
+            checkbox.addEventListener("change", updateHabits);
+        });
+
+        updateHabits();
+
+
+        // WATER TRACKER
+        let glasses = 5;
+
+        function updateWater() {
+            document.getElementById("waterCount").innerHTML =
+                glasses + " / 8 <small>glasses</small>";
+
+            document.getElementById("waterProgress").style.width =
+                (glasses / 8 * 100) + "%";
+
+            document.getElementById("waterMessage").textContent =
+                glasses === 8 ? "Daily water goal achieved! 🌸" :
+                    "Stay hydrated throughout the day.";
+        }
+
+        document.getElementById("waterPlus").addEventListener("click", function () {
+            if (glasses < 8) {
+                glasses++;
+                updateWater();
+            }
+        });
+
+        document.getElementById("waterMinus").addEventListener("click", function () {
+            if (glasses > 0) {
+                glasses--;
+                updateWater();
+            }
+        });
+
+        updateWater();
+
+
+        // CALENDAR
+        const calendarGrid = document.getElementById("calendarGrid");
+        const calendarMonth = document.getElementById("calendarMonth");
+
+        let displayedMonth = 10;
+        let displayedYear = 2026;
+
+        function renderCalendar() {
+            const monthNames = [
+                "January", "February", "March", "April",
+                "May", "June", "July", "August",
+                "September", "October", "November", "December"
+            ];
+
+            calendarMonth.textContent =
+                monthNames[displayedMonth] + " " + displayedYear;
+
+            calendarGrid.innerHTML = `
+                <span>Su</span><span>Mo</span><span>Tu</span>
+                <span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+            `;
+
+            const firstDay = new Date(displayedYear, displayedMonth, 1).getDay();
+            const daysInMonth = new Date(displayedYear, displayedMonth + 1, 0).getDate();
+
+            for (let i = 0; i < firstDay; i++) {
+                const blank = document.createElement("span");
+                calendarGrid.appendChild(blank);
+            }
+
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dateButton = document.createElement("button");
+                dateButton.type = "button";
+                dateButton.textContent = day;
+
+                if (day === 10 && displayedMonth === 10 && displayedYear === 2026) {
+                    dateButton.classList.add("selected-day");
+                }
+
+                dateButton.addEventListener("click", function () {
+                    calendarGrid.querySelectorAll("button").forEach(function (button) {
+                        button.classList.remove("selected-day");
+                    });
+                    dateButton.classList.add("selected-day");
+                });
+
+                calendarGrid.appendChild(dateButton);
+            }
+        }
+
+        document.getElementById("prevMonth").addEventListener("click", function () {
+            displayedMonth--;
+            if (displayedMonth < 0) {
+                displayedMonth = 11;
+                displayedYear--;
+            }
+            renderCalendar();
+        });
+
+        document.getElementById("nextMonth").addEventListener("click", function () {
+            displayedMonth++;
+            if (displayedMonth > 11) {
+                displayedMonth = 0;
+                displayedYear++;
+            }
+            renderCalendar();
+        });
+
+        renderCalendar();
+    </script>
+
+</body>
+</html>

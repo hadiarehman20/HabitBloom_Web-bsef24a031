@@ -1,0 +1,105 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | HabitBloom</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="auth-page">
+
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand brand-name" href="index.html">
+                <span class="brand-flower">❀</span>HabitBloom
+            </a>
+            <a href="index.html" class="back-home">← Back to Home</a>
+        </div>
+    </nav>
+
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-wrapper signup-wrapper">
+
+                <!-- Floral Image -->
+                <div class="auth-image-side signup-image-side">
+                    <img src="images/signup-flowers.jpg" alt="Watercolor floral arrangement">
+                </div>
+
+                <!-- Signup Form -->
+                <div class="auth-form-side">
+
+                    <div class="auth-heading">
+                        <span class="auth-flower">✿</span>
+                        <h1>Create Account</h1>
+                        <p>Start your journey towards better habits.</p>
+                    </div>
+
+                    <form action="#" method="post">
+
+                        <div class="mb-3">
+                            <label for="fullname" class="form-label">Full Name</label>
+                            <input type="text" class="form-control custom-input"
+                                   id="fullname" name="fullname"
+                                   placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control custom-input"
+                                   id="email" name="email"
+                                   placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control custom-input"
+                                   id="password" name="password"
+                                   placeholder="Create a password" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="confirm-password" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control custom-input"
+                                   id="confirm-password" name="confirm-password"
+                                   placeholder="Confirm your password" required>
+                        </div>
+
+                        <div class="form-check signup-terms mb-3">
+                            <input class="form-check-input" type="checkbox" id="terms" required>
+                            <label class="form-check-label" for="terms">
+                                I agree to the Terms and Conditions
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-maroon login-button">
+                            Create Account
+                        </button>
+
+                        <p class="signup-text">
+                            Already have an account?
+                            <a href="login.html">Login here</a>
+                        </p>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="auth-footer">
+        © 2026 HabitBloom. Small steps. Beautiful growth.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
